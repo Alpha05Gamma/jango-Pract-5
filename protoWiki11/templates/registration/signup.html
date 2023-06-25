@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Регистрация | Elden Ring Wiki</title>
+	<link rel="shortcut icon" href="{%static "img/Site-favicon.webp"%}">
+	<!-- styles -->
+	<link rel="stylesheet" href="{%static "css/bootstrap.min.css"%}">
+	<link rel="stylesheet" href="{%static "css/jquery.fancybox.min.css"%}">
+	<link rel="stylesheet" href="{%static "css/style.css"%}">
+	<link rel="stylesheet" href="{%static "css/MPstyles.css"%}">
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"></head>
+
+<body class="bg-image shortdata">
+
+	<div class="container bg-opacity-50 bg-dark">
+
+		<div class = "d-flex flex-column justify-content-around align-items-center bg-light mainbox">
+			<H1 class="text-black">Добро пожаловать</h1>
+				
+				
+			<div class="card">
+					<div class="card-body">
+						<div class="d-flex flex-column  align-items-center justify-content-center">
+							<H2 class="text-black">Регистрация</h2>
+								<form method="post">
+									{% csrf_token %}
+										<div class="mb-3">
+										<label for="username" class="text-black form-label">Логин</label>
+										<input type="text" class="form-control" name="username" id="username">
+										<label for="password1" class="text-black form-label">Пароль</label>
+										<input class="form-control" type="password" name="password1" id="password1">
+										<label for="password2" class="text-black form-label">Подтвердите пароль</label>
+										<input type="password" class="form-control" name="password2" id="password2">
+										</div>
+										<button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+								</form>
+                  			<p>Уже есть аккаунт?</p>
+                  			<a class="text-primary" href="{% url 'login'%}">Авторизация</a>
+				  			<a class="text-primary" href="{% url 'home'%}">Главная</a>
+				</div>		
+			</div>
+		</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

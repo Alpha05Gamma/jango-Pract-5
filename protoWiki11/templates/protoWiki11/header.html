@@ -1,0 +1,57 @@
+{% load static %}
+		<div class="headbox1container headbox1">
+			<h2 class="headbox1H1">Добро пожаловать на Вики по Elden Ring</h2>
+			<img class="headbox1Img" src="{%static "img/Site-logo.webp"%} ">
+		</div>
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light headbox2">
+			<div class="container-fluid">
+			  <a class="navbar-brand">Навигация</a>
+			  <div class="collapse navbar-collapse" id="navbarColor03">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Главная</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="WeaponPage.html">Оружие</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Персонажи</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="MelinasPage.html">Мелина</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="https://eldenring.fandom.com/ru/wiki/%D0%9F%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%B6%D0%B8">Список персонажей</a>
+						  </div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Боссы</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="AstelPage.html">Астель, Рожденный Бездной</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="https://eldenring.fandom.com/ru/wiki/%D0%91%D0%BE%D1%81%D1%81%D1%8B">Список боссов</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Предметы</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="FirePotPage.html">Огненный горшок</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="https://eldenring.fandom.com/ru/wiki/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B">Список инструментов</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						{% if user.is_authenticated  %}
+						<div>
+							<a class="nav-link" href="{% url 'logout' %}" title="Выйти">Выйти</a>
+						</div>
+					{% else %}
+						<dib>
+							<a class="nav-link" href="{% url 'signup' %}" title="Зарегестрироваться">Зарегестрироваться</a>
+							<a class="nav-link" href="{% url 'login' %}" title="Войти">Войти</a>
+						</div>
+					{% endif %}						
+					</li>					
+				</ul>
+			  </div>
+			</div>
+		</nav>
